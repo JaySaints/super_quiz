@@ -10,10 +10,10 @@
     tools:context=".activitys.MainActivity">
 
     <TextView
-        android:id="@+id/main_txt_name"
+        android:id="@+id/main_txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quiz App"
+        android:text="Super Quiz"
         android:layout_marginBottom="30dp"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Welcome"
+                android:text="Bem Vindo!"
                 android:textColor="#363A43"
                 android:textStyle="bold"
                 android:textSize="30sp"/>
@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Please enter your name"
+                android:text="Por favor informe seu nome"
                 android:textColor="#7A8089"
                 android:textSize="16sp"/>
 
@@ -58,9 +58,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/main_txt_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name"
+                    android:hint="Nome"
                     android:textColor="#363A43"
                     android:textColorHint="#7A8089"
                     tools:ignore="SpeakableTextPresentCheck" />
