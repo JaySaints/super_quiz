@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margen_grande">24dp</dimen>
-    <dimen name="margen_normal">16dp</dimen>
-    <dimen name="margen_pequena">8dp</dimen>
-
-    <dimen name="title_header">50dp</dimen>
+    <dimen name="margem_grande">24dp</dimen>
+    <dimen name="margem_normal">16dp</dimen>
+    <dimen name="margem_pequena">8dp</dimen>
+    <dimen name="margem_extra_grande">100dp</dimen>
 
 
 </resources>
