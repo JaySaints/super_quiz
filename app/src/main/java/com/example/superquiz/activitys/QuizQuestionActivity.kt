@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.superquiz.R
 import com.example.superquiz.data.ListOfQuestions
@@ -23,10 +25,12 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_question)
 
+        // Está variavel irá receber a lista de perguntas contidas no arquivo ListOfQuestions
         mQuestionsList = ListOfQuestions.getQuestions()
 
         setQuestion()
 
+        val btnSubmit = findViewById<Button>(R.id.quiz_btn_submit)
         val txtOptionOne = findViewById<TextView>(R.id.quiz_txt_option_one)
         val txtOptionTwo = findViewById<TextView>(R.id.quiz_txt_option_two)
         val txtOptionThree = findViewById<TextView>(R.id.quiz_txt_option_three)
@@ -36,13 +40,18 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         txtOptionTwo.setOnClickListener(this)
         txtOptionThree.setOnClickListener(this)
         txtOptionFour.setOnClickListener(this)
+        btnSubmit.setOnClickListener(this)
     }
 
+    // Pega a questão com suas informações e atribui nos elementos da tela
     private fun setQuestion() {
-        mCurrentPosition = 1
+        // mCurrentPosition = 1
+
         val question = mQuestionsList!![mCurrentPosition - 1]
 
         defaultOptionView()
+
+
 
         val pbrProgressBar = findViewById<ProgressBar>(R.id.quiz_pbr_progressBar)
         val txtProgress = findViewById<TextView>(R.id.quiz_txt_progress)
@@ -51,6 +60,7 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         val txtOptionTwo = findViewById<TextView>(R.id.quiz_txt_option_two)
         val txtOptionThree = findViewById<TextView>(R.id.quiz_txt_option_three)
         val txtOptionFour = findViewById<TextView>(R.id.quiz_txt_option_four)
+        val btnSubmit = findViewById<Button>(R.id.quiz_btn_submit)
 
         pbrProgressBar.progress = mCurrentPosition
         txtProgress.text = "$mCurrentPosition" + "/" + pbrProgressBar.max
@@ -59,6 +69,12 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         txtOptionTwo.text = question.optionTwo
         txtOptionThree.text = question.optionThree
         txtOptionFour.text = question.optionFour
+
+        if(mCurrentPosition == mQuestionsList!!.size) {
+            btnSubmit.text = "FIM"
+        } else {
+            btnSubmit.text = "RESPONDER"
+        }
     }
 
     private fun defaultOptionView() {
@@ -80,11 +96,13 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    // Implementa evento onclick para realizar a seleção das resposta
     override fun onClick(v: View?) {
         val txtOptionOne = findViewById<TextView>(R.id.quiz_txt_option_one)
         val txtOptionTwo = findViewById<TextView>(R.id.quiz_txt_option_two)
         val txtOptionThree = findViewById<TextView>(R.id.quiz_txt_option_three)
         val txtOptionFour = findViewById<TextView>(R.id.quiz_txt_option_four)
+        val btnSubmit = findViewById<Button>(R.id.quiz_btn_submit)
 
         when(v?.id) {
             R.id.quiz_txt_option_one -> {
@@ -99,9 +117,58 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
             R.id.quiz_txt_option_four -> {
                 selectedOptionView(txtOptionFour, 4)
             }
+            R.id.quiz_btn_submit -> {
+                if(mSelectedOptionPosition == 0) {
+                    mCurrentPosition++
+
+                    when {
+                        mCurrentPosition <= mQuestionsList!!.size -> {
+                            setQuestion()
+                        } else -> {
+                            Toast.makeText(this, "Você completou o Super Quiz com sucesso!", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                } else {
+                    val question = mQuestionsList?.get(mCurrentPosition - 1)
+                    if(question!!.correctAnswer != mSelectedOptionPosition) {
+                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                    }
+                    answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+
+                    if(mCurrentPosition == mQuestionsList!!.size) {
+                        btnSubmit.text = "FIM"
+                    } else {
+                        btnSubmit.text = "Próxima Pergunta"
+                    }
+                    mSelectedOptionPosition = 0
+                }
+            }
         }
     }
 
+    private fun answerView(answer: Int, drawableView: Int) {
+        val txtOptionOne = findViewById<TextView>(R.id.quiz_txt_option_one)
+        val txtOptionTwo = findViewById<TextView>(R.id.quiz_txt_option_two)
+        val txtOptionThree = findViewById<TextView>(R.id.quiz_txt_option_three)
+        val txtOptionFour = findViewById<TextView>(R.id.quiz_txt_option_four)
+
+        when(answer) {
+            1 -> {
+                txtOptionOne.background = ContextCompat.getDrawable(this, drawableView)
+            }
+            2 -> {
+                txtOptionTwo.background = ContextCompat.getDrawable(this, drawableView)
+            }
+            3 -> {
+                txtOptionThree.background = ContextCompat.getDrawable(this, drawableView)
+            }
+            4 -> {
+                txtOptionFour.background = ContextCompat.getDrawable(this, drawableView)
+            }
+        }
+    }
+
+    // Função responsável por fazer a seleção dos TextView
     private fun selectedOptionView(tv: TextView, selectedOptionNum: Int) {
         defaultOptionView()
         mSelectedOptionPosition = selectedOptionNum
