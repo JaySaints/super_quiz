@@ -1,6 +1,6 @@
 package com.example.superquiz.data
 
-data class Questions (
+data class Question (
     val id: Int,
     val question: String,
     val image: Int,

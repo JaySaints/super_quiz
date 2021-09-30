@@ -1,10 +1,10 @@
 package com.example.superquiz.data
 
 object ListOfQuestions {
-    fun getQuestions() : ArrayList<Questions> {
-        val questionsList = ArrayList<Questions>()
+    fun getQuestions() : ArrayList<Question> {
+        val questionsList = ArrayList<Question>()
 
-        val que1 = Questions(1,
+        val que1 = Question(1,
             "Qual dos seguintes super heróis não é da DC Comics?",
             1,
             "Lanterna Verde",
@@ -15,7 +15,7 @@ object ListOfQuestions {
         )
         questionsList.add(que1)
 
-        val que2 = Questions(2,
+        val que2 = Question(2,
             "Qual o verdadeiro nome do Superman?",
             2,
             "Michael Caio",
@@ -26,7 +26,7 @@ object ListOfQuestions {
         )
         questionsList.add(que2)
 
-        val que3 = Questions(3,
+        val que3 = Question(3,
             "Quem matou os pais do Batman?",
             3,
             "Coringa",

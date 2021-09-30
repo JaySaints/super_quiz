@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btn_start = findViewById<Button>(R.id.main_btn_start)
-        val txt_name = findViewById<TextView>(R.id.main_txt_name)
+        val btnStart = findViewById<Button>(R.id.main_btn_start)
+        val txtName = findViewById<TextView>(R.id.main_txt_name)
 
-        btn_start.setOnClickListener {
-            if (txt_name.text.toString().isEmpty()) {
+        btnStart.setOnClickListener {
+            if (txtName.text.toString().isEmpty()) {
                 Toast.makeText(this, "Informe seu nome!", Toast.LENGTH_LONG).show()
             } else {
                 val intent = Intent(this, QuizQuestionActivity::class.java)
