@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.superquiz.R
+import com.example.superquiz.utils.Const
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Informe seu nome!", Toast.LENGTH_LONG).show()
             } else {
                 val intent = Intent(this, QuizQuestionActivity::class.java)
+                intent.putExtra(Const.USER_NAME, txtName.text.toString())
                 startActivity(intent)
                 finish()
             }

@@ -3,14 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Documentos/Develop/Android/super_quiz/app/src/main/res/drawable/correct_option_border_bg.xml" value="0.10885416666666667" />
-        <entry key="..\:/Documentos/Develop/Android/super_quiz/app/src/main/res/drawable/default_option_border_bg.xml" value="0.2203125" />
-        <entry key="..\:/Documentos/Develop/Android/super_quiz/app/src/main/res/drawable/selected_option_border_bg.xml" value="0.2203125" />
-        <entry key="..\:/Documentos/Develop/Android/super_quiz/app/src/main/res/drawable/wrong_option_border_bg.xml" value="0.10885416666666667" />
-        <entry key="..\:/Documentos/Develop/Android/super_quiz/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Documentos/Develop/Android/super_quiz/app/src/main/res/layout/activity_quiz_question.xml" value="0.22" />
-        <entry key="..\:/Documentos/Develop/Android/super_quiz/app/src/main/res/layout/activity_second.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pablo/Documents/Develop/Android/SuperQuiz/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Users/pablo/Documents/Develop/Android/SuperQuiz/app/src/main/res/layout/activity_quiz_question.xml" value="0.1" />
+        <entry key="..\:/Users/pablo/Documents/Develop/Android/SuperQuiz/app/src/main/res/layout/activity_result.xml" value="0.25" />
       </map>
     </option>
   </component>
@@ -19,12 +14,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.20416666666666666" />
-      </ProjectState>
-    </option>
   </component>
 </project>
