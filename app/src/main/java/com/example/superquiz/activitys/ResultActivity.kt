@@ -1,6 +1,7 @@
 package com.example.superquiz.activitys
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -27,6 +28,16 @@ class ResultActivity : AppCompatActivity() {
         val btnFinish = findViewById<Button>(R.id.result_btn_finish)
         btnFinish.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
+        val btnSearch = findViewById<Button>(R.id.result_btn_search)
+        btnSearch.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_TEXT, "Veja minha pontuação no Super Quiz! $username acertou $correctAnswers de $totalQuestions perguntas.")
+            intent.setType("text/plain")
+            intent.setPackage("com.whatsapp")
+            startActivity(intent)
         }
     }
 }
