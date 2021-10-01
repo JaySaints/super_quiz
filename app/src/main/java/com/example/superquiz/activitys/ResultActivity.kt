@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import com.example.superquiz.R
 import com.example.superquiz.utils.Const
@@ -31,8 +32,8 @@ class ResultActivity : AppCompatActivity() {
             finish()
         }
 
-        val btnSearch = findViewById<Button>(R.id.result_btn_search)
-        btnSearch.setOnClickListener {
+        val btnShare = findViewById<ImageButton>(R.id.result_btn_share)
+        btnShare.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.putExtra(Intent.EXTRA_TEXT, "Veja minha pontuação no Super Quiz! $username acertou $correctAnswers de $totalQuestions perguntas.")
             intent.setType("text/plain")

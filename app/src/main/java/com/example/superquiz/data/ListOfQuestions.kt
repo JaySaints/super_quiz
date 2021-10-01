@@ -37,6 +37,40 @@ object ListOfQuestions {
         )
         questionsList.add(que3)
 
+
+        val que4 = Question(4,
+            "O que tira os super poderes do Superman?",
+            3,
+            "Espinafre",
+            "Criptonita",
+            "Arroz e Feijão",
+            "Sol Amarelo",
+            2
+        )
+        questionsList.add(que4)
+
+        val que5 = Question(5,
+            "Quem é o protetor de Kahndaq?",
+            3,
+            "Lanterna Verde",
+            "Adão Negro",
+            "Homem-aranha",
+            "Aquaman",
+            2
+        )
+        questionsList.add(que5)
+
+        val que6 = Question(6,
+            "O que Billy Batson faz para se tornar Shazam?",
+            3,
+            "Gritando Shazam",
+            "Quando sua adrenalina sobe",
+            "Absorvendo energia solar",
+            "Se torna Shazam quando é morto",
+            1
+        )
+        questionsList.add(que6)
+
         return questionsList
     }
 }

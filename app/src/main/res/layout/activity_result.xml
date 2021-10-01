@@ -60,7 +60,6 @@
         android:textSize="20sp"
         android:textStyle="bold"/>
 
-
     <Button
         android:id="@+id/result_btn_finish"
         android:layout_width="match_parent"
@@ -71,14 +70,14 @@
         android:textSize="18sp"
         android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/result_btn_search"
+    <ImageButton
+        android:id="@+id/result_btn_share"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:contentDescription="button_share"
         android:background="@color/design_default_color_primary"
         android:layout_marginTop="20dp"
-        android:text="Compartilhar"
-        android:textSize="18sp"
-        android:textColor="@android:color/white" />
+        app:srcCompat="@android:drawable/ic_menu_share" />
 
 </LinearLayout>
