@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/img_medium"
+    android:background="@drawable/img_cartoon"
     tools:context=".activitys.MainActivity">
 
     <TextView
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@android:color/white"
+        android:background="@color/primary_light"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
 
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Bem Vindo!"
-                android:textColor="#363A43"
+                android:textColor="@color/primary_light"
                 android:textStyle="bold"
                 android:textSize="30sp"/>
 
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Por favor informe seu nome"
-                android:textColor="#7A8089"
+                android:textColor="@color/accent"
                 android:textSize="16sp"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -62,19 +62,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nome"
-                    android:textColor="#363A43"
+                    android:textColor="@color/primary_text"
                     android:textColorHint="#7A8089"
                     tools:ignore="SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/main_btn_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/design_default_color_primary"
                 android:layout_marginTop="20dp"
+                android:background="@color/primary"
                 android:text="Start"
-                android:textSize="18sp"
-                android:textColor="@android:color/white" />
+                android:textColor="#212121"
+                android:textSize="18sp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

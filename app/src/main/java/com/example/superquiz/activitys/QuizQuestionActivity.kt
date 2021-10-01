@@ -3,14 +3,12 @@ package com.example.superquiz.activitys
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.content.ContextCompat
 import com.example.superquiz.R
 import com.example.superquiz.data.ListOfQuestions
@@ -56,8 +54,6 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
         defaultOptionView()
 
-
-
         val pbrProgressBar = findViewById<ProgressBar>(R.id.quiz_pbr_progressBar)
         val txtProgress = findViewById<TextView>(R.id.quiz_txt_progress)
         val txtQuestion = findViewById<TextView>(R.id.quiz_txt_question)
@@ -65,15 +61,18 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         val txtOptionTwo = findViewById<TextView>(R.id.quiz_txt_option_two)
         val txtOptionThree = findViewById<TextView>(R.id.quiz_txt_option_three)
         val txtOptionFour = findViewById<TextView>(R.id.quiz_txt_option_four)
+        val imgImage = findViewById<ImageView>(R.id.quiz_img_image)
         val btnSubmit = findViewById<Button>(R.id.quiz_btn_submit)
 
         pbrProgressBar.progress = mCurrentPosition
         txtProgress.text = "$mCurrentPosition" + "/" + pbrProgressBar.max
         txtQuestion.text = question!!.question
+        imgImage.setImageResource(question.image)
         txtOptionOne.text = question.optionOne
         txtOptionTwo.text = question.optionTwo
         txtOptionThree.text = question.optionThree
         txtOptionFour.text = question.optionFour
+
 
         if(mCurrentPosition == mQuestionsList!!.size) {
             btnSubmit.text = "FIM"

@@ -1,12 +1,14 @@
 package com.example.superquiz.data
 
+import com.example.superquiz.R
+
 object ListOfQuestions {
     fun getQuestions() : ArrayList<Question> {
         val questionsList = ArrayList<Question>()
 
         val que1 = Question(1,
             "Qual dos seguintes super heróis não é da DC Comics?",
-            1,
+            R.drawable.img_whenis,
             "Lanterna Verde",
             "Homem-aranha",
             "Superman",
@@ -17,7 +19,7 @@ object ListOfQuestions {
 
         val que2 = Question(2,
             "Qual o verdadeiro nome do Superman?",
-            2,
+            R.drawable.img_superman,
             "Michael Caio",
             "João Mecias",
             "Clark Kent",
@@ -28,7 +30,7 @@ object ListOfQuestions {
 
         val que3 = Question(3,
             "Quem matou os pais do Batman?",
-            3,
+            R.drawable.img_batman,
             "Coringa",
             "Chapolim Colorado",
             "Joe-Chill",
@@ -40,7 +42,7 @@ object ListOfQuestions {
 
         val que4 = Question(4,
             "O que tira os super poderes do Superman?",
-            3,
+            R.drawable.img_superman_2,
             "Espinafre",
             "Criptonita",
             "Arroz e Feijão",
@@ -51,7 +53,7 @@ object ListOfQuestions {
 
         val que5 = Question(5,
             "Quem é o protetor de Kahndaq?",
-            3,
+            R.drawable.img_whenis,
             "Lanterna Verde",
             "Adão Negro",
             "Homem-aranha",
@@ -62,7 +64,7 @@ object ListOfQuestions {
 
         val que6 = Question(6,
             "O que Billy Batson faz para se tornar Shazam?",
-            3,
+            R.drawable.img_shazam,
             "Gritando Shazam",
             "Quando sua adrenalina sobe",
             "Absorvendo energia solar",
